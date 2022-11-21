@@ -1,0 +1,36 @@
+body{
+    max-width: 100vw;
+    text-align:center;
+}
+h1{
+    text-align:center;
+}
+a{
+    color:green;
+}
+img{
+    width:50px;
+}
+#tabella{
+    outline: 5px solid black;
+    width:100%;
+    height:80vh;
+    border-collapse: collapse;
+    border-radius: 40px;
+}
+p{
+    margin:10px;
+}
+.cell{
+    border:1px solid Green;
+}
+.font{
+    font-size:1em;
+    font-weight:bold;
+}
+.hide {
+    visibility: hidden;
+    }
+.red{
+    outline:1px dashed red;
+}
