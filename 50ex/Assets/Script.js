@@ -145,4 +145,95 @@ for (let i = 0; (li = listElements[i]); i++) {
   li.parentNode.removeChild(li);
 }
 }
+
+const aHref = document.querySelectorAll('a');
+  for(const el of aHref) {
+    el.onmouseover = () => {
+  alert("https://www.google.com/");
+  }
+};
+
+const btnHide = document.getElementById('btn5');
+btnHide.onclick = () => {
+  const imgs = document.querySelectorAll('img');
+  for (const img of imgs) {
+    img.style.display = img.style.display === 'none' ? 'block' : 'none';
+  }
+}
+
+const btnHideTable=document.getElementById('btn6');
+btnHideTable.onclick = () => {
+  const myTable=document.getElementById('tabella');
+  myTable.style.display=myTable.style.display==='none'?'block' :'none';
+}
+
+const sumRows = () => {
+
+  const td = document.querySelectorAll('td');
+  let total = 0;
+  let rowsNumbers = [];
+
+  for(let i = 0; i < td.length; i++){
+
+    rowsNumbers.push(parseInt(td[i].textContent)); //convert string in number and add to temp array
+
+    if(!isNaN(rowsNumbers[i])){ 
+      total+= rowsNumbers[i];
+    }
+  }
+  return total;
+}
+console.log(sumRows());
+
+const h1=document.querySelector("h1");
+h1.onclick=()=>{
+  h1.innerText=h1.innerText.slice(0,-1);
+}
+
+const tdGreen=document.querySelectorAll("td");
+for(const td of tdGreen){
+  td.onclick=()=>{
+    td.style.backgroundColor="green";
+  }
+}
+
+const removeRandomTd=()=>{
+  const removeFirstTd=document.getElementById("btn7");
+  const td=document.getElementsByTagName("td");
+  removeFirstTd.onclick=()=>{
+    const randomTd=Math.floor(Math.random()*td.length);
+    td[randomTd].remove();
+  }
+}
+console.log(removeRandomTd());
+
+const tdBorders=document.querySelectorAll("td");
+for(const tdBorder of tdBorders){
+  tdBorder.onmouseover=()=>{
+    tdBorder.style.border="1px solid pink";
+  }
+}
+
+const createNewTable=()=>{
+  const footer=document.querySelector("footer");
+  const newTable=document.createElement("table");
+  newTable.classList.add("table");
+  newTable.setAttribute("id","new-table");
+  footer.appendChild(newTable);
+  for(let i=0;i<4;i++){
+    const newTr=document.createElement("tr");
+    for(let j=0;j<3;j++){
+      const newTd=document.createElement("td");
+      newTr.appendChild(newTd);
+      newTd.innerText="Ciao";
+    }
+    newTable.appendChild(newTr);
+  }
+}
+console.log(createNewTable());
+
+const removeTable=()=>{
+  document.getElementById("new-table").remove();
+}
+console.log(removeTable());
 */
